@@ -12,6 +12,7 @@ TagManager:
   - shopkeeper
   - g
   - sh
+  - Ladder
   layers:
   - Default
   - TransparentFX

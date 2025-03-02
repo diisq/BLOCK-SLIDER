@@ -156,10 +156,6 @@ public class FirstPersonController : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         _avatar = GetComponent<Alteruna.Avatar>();
-        if (!_avatar.IsMe)
-        {
-            return;
-        }
       
 
         if (crosshair)
@@ -212,10 +208,6 @@ public class FirstPersonController : MonoBehaviour
 
     private void Update()
     {
-        if (!_avatar.IsMe)
-        {
-            return;
-        }
         #region Camera
         // Control camera movement
         if (cameraCanMove)

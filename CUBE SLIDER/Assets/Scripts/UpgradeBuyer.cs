@@ -12,6 +12,7 @@ public class UpgradeBuyer : MonoBehaviour
     public int priceFor1;
     public int priceFor2;
     public int priceFor3;
+    public int priceFor4;
 
     public PhysicMaterial cube;
 
@@ -68,6 +69,28 @@ public class UpgradeBuyer : MonoBehaviour
 
                         float newPrice = priceFor2 * 1.2f;
                         priceFor2 = (int)Mathf.Round(newPrice);
+                    }
+                }
+
+            }
+            else if (hit.collider.name == "Upgrade 3")
+            {
+                price.gameObject.SetActive(true);
+                price.text = $"Price: {priceFor4}";
+                desc.text = "Increases Speed";
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    if (PreventPlayerFall.currencyValue >= priceFor4)
+                    {
+                        PreventPlayerFall.currencyValue -= priceFor4;
+                        FirstPersonController player = GetComponentInParent<FirstPersonController>();
+
+                        player.sprintSpeed += 0.7f;
+                        player.walkSpeed += 0.5f;
+
+                        float newPrice = priceFor4 * 1.2f;
+                        priceFor4 = (int)Mathf.Round(newPrice);
                     }
                 }
 

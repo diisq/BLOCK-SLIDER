@@ -8,9 +8,10 @@ public class PreventPlayerFall : MonoBehaviour
     public TextMeshProUGUI score;
     public TextMeshProUGUI scoreCurrency;
     public static int scoreValue = 0;
-    public static int currencyValue = 0;
+    public static int currencyValue = 71;
     public static int CubeMultiplier = 0;
     public GameObject barrier;
+    public GameObject barrier2;
     private Rigidbody rb;
     public ParticleSystem ps;
     public Transform particleSpawner;
@@ -36,6 +37,11 @@ public class PreventPlayerFall : MonoBehaviour
         if (currencyValue >= 5)
         {
             barrier.SetActive(false);
+        }
+
+        if (currencyValue >= 75)
+        {
+            barrier2.SetActive(false);
         }
     }
 
